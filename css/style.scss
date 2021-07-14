@@ -1,25 +1,51 @@
-$bg: #6e5941;
+$bgBrown: #6e5941;
+$bgGrey: #323232;
 
 *{ box-sizing:border-box; }
-body{ background:$bg; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; color:#fff; font-family:16px; line-height:1.6; }
+body{ background:$bgBrown; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; color:#fff; font-family:16px; line-height:1.6; }
 a{ text-decoration: none; }
 h1, h2{ line-height:1.2; }
+ul, li{ margin:0; padding:0; list-style:none; }
 
 header{ 
     width:100vw; min-height:100vh; display:grid; padding:30px; font-size:1.5em; background-image:url('../img/header.jpg'); background-size:cover;
     grid-template-columns:1fr 1fr 1fr;
 
-    .logo{ align-self:start; justify-self:center; width:64px; height:64px; background-image:url('../img/logo-01.png'); background-size:150%; background-position:center; background-color:#fbbd67; border-radius:4px;; }
+    .logo{ align-self:start; justify-self:center; width:64px; height:64px; background-image:url('../img/logo-01.png'); background-size:150%; background-position:center; background-color:#fbbd67; border-radius:4px; position:relative; z-index:3; }
 
     .intro{ grid-column:1 / 4; max-width:580px; align-self:end; font-weight:bold;
         h1{ margin:0; text-transform:uppercase; font-size:1.7em; }
         p { margin:0; }
-        > *{ display: inline; background:$bg; }
+        > *{ display: inline; background:$bgBrown; }
     }
 
     a { color:#fff; }
-    .link.work{ order:-1; align-self:start; }
-    .link.about{ justify-self:end; justify-self:end; }
-    .link.contact{ order:9; grid-column-end:4; justify-self:end; align-self:end; }
-    .link.behance{ order:8; align-self:end; }
+    .link{ position:relative; z-index:3; }
+    .link#work{ order:-1; align-self:start; }
+    .link#about{ justify-self:end; }
+    .link#contact{ order:9; grid-column-end:4; justify-self:end; align-self:end; }
+    .link#behance{ order:8; align-self:end; }
 }
+
+nav{
+    display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:2; background:$bgGrey;
+
+    h2{ margin:0; }
+    ul{ display:grid; height:100%; grid-template-columns: repeat(2, min-content); justify-content:center; align-content:center; align-items:center; grid-row-gap:20px; grid-column-gap:40px;
+    
+        a{ color:#fff; display:grid; grid-template-columns:80px 1fr; align-content:center; align-items:center;
+            span{ font-style:italic; color:hsla(100%,100%,100%,0.5); font-size:0.8em; }
+            h2{ grid-row:span 2; white-space:nowrap; }
+        }
+    }
+
+    &.show{
+        animation:fadeIn both .2s;
+    }
+    &.hide{
+        animation:fadeOut both .2s;
+    }
+}
+
+@keyframes fadeIn{ from{ opacity:0;} to{ opacity:1;} }
+@keyframes fadeOut{ from{ opacity:1;} to{ opacity:0;} }

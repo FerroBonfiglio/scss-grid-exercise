@@ -14,10 +14,10 @@
 
     <a href="https://www.tiborbrink.com/" class="logo"></a>    
 
-    <div class="link work"><a href="">Work</a></div>
-    <div class="link about"><a href="">About</a></div>
-    <div class="link contact"><a href="">Contact</a></div>
-    <div class="link behance"><a href="">Bē</a></div>
+    <div class="link" id="work"><a href="">Work</a></div>
+    <div class="link" id="about"><a href="">About</a></div>
+    <div class="link" id="contact"><a href="">Contact</a></div>
+    <div class="link" id="behance"><a href="">Bē</a></div>
     
     <div class="intro">
         
@@ -29,6 +29,140 @@
     </div>
 
 </header>
+
+<nav id="nav">
+
+    <ul>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>Ally Finance Group</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>Bondbury</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>BrayStone</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>Westbridge</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>Wildcoast</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>GasteinHunde</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>LiftSupply</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>OSO Petcare</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2018</span>
+                <h2>Prometheus</h2>
+                <span class="type">Branding</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2016</span>
+                <h2>Destruction = Creation</h2>
+                <span class="type">Poster</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2016</span>
+                <h2>The art of growing old</h2>
+                <span class="type">Catalog</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2016</span>
+                <h2>Numb</h2>
+                <span class="type">Kinetic-art installation</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2014</span>
+                <h2>The greatest writer never known</h2>
+                <span class="type">Book</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">2014</span>
+                <h2>Iconpacks</h2>
+                <span class="type">Icons</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="year">From 2014</span>
+                <h2>Advertising</h2>
+                <span class="type">Other</span>
+            </a>
+        </li>
+ </ul>
+
+</nav>
+
+<script>
+const workButton    = document.getElementById('work');
+const nav           = document.getElementById('nav');
+
+workButton.addEventListener('click', function(event){
+    event.preventDefault();
+
+    if( nav.classList.contains('show') ){
+        nav.classList.add('hide');
+        nav.classList.remove('show');
+        setTimeout(() => { nav.style.display = 'none'; }, 200);
+    }else{
+        nav.style.display = 'block';
+        nav.classList.add('show');
+        nav.classList.remove('hide');
+    }
+
+    
+});
+
+</script>
 
 </body>
 </html>
